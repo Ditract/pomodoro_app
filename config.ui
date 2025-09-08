@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkWindow" id="config_window">
+    <property name="title">Configuración — Descanso visual</property>
+    <property name="default_width">420</property>
+    <property name="default_height">260</property>
+    <property name="resizable">False</property>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="margin_start">16</property>
+        <property name="margin_end">16</property>
+        <property name="margin_top">16</property>
+        <property name="margin_bottom">16</property>
+        <property name="spacing">12</property>
+
+        <child>
+          <object class="GtkGrid">
+            <property name="column_spacing">12</property>
+            <property name="row_spacing">10</property>
+
+            <child>
+              <object class="GtkLabel">
+                <property name="label">Minutos de trabajo</property>
+                <property name="halign">start</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+
+            <child>
+              <object class="GtkSpinButton" id="spin_work">
+                <property name="adjustment">adj_work</property>
+                <property name="numeric">True</property>
+                <property name="digits">0</property>
+                <property name="width_chars">4</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+
+            <child>
+              <object class="GtkLabel">
+                <property name="label">Minutos de descanso</property>
+                <property name="halign">start</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+
+            <child>
+              <object class="GtkSpinButton" id="spin_rest">
+                <property name="adjustment">adj_rest</property>
+                <property name="numeric">True</property>
+                <property name="digits">0</property>
+                <property name="width_chars">4</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+
+            <child>
+              <object class="GtkLabel">
+                <property name="label">Notificaciones del sistema</property>
+                <property name="halign">start</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+
+            <child>
+              <object class="GtkSwitch" id="switch_notify">
+                <property name="halign">start</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+
+            <child>
+              <object class="GtkLabel">
+                <property name="label">Ventana siempre visible</property>
+                <property name="halign">start</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">3</property>
+              </packing>
+            </child>
+
+            <child>
+              <object class="GtkSwitch" id="switch_on_top">
+                <property name="halign">start</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">3</property>
+              </packing>
+            </child>
+
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkSeparator"/>
+        </child>
+
+        <child>
+          <object class="GtkBox">
+            <property name="halign">end</property>
+            <property name="spacing">8</property>
+            <child>
+              <object class="GtkButton" id="btn_cancel">
+                <property name="label">Cancelar</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_save">
+                <property name="label">Guardar</property>
+                <property name="can_default">True</property>
+                <property name="receives_default">True</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+      </object>
+    </child>
+  </object>
+
+  <!-- Ajustes para los spinners -->
+  <object class="GtkAdjustment" id="adj_work">
+    <property name="lower">1</property>
+    <property name="upper">240</property>
+    <property name="value">20</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">5</property>
+  </object>
+
+  <object class="GtkAdjustment" id="adj_rest">
+    <property name="lower">1</property>
+    <property name="upper">120</property>
+    <property name="value">10</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">5</property>
+  </object>
+</interface>
+
