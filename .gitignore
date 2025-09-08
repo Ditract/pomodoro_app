@@ -1,3 +1,13 @@
+# Python compiled files
 __pycache__/
 *.pyc
+
+# Virtual environment
 venv/
+
+# Editor/IDE files
+.vscode/
+*.swp
+
+# Logs
+*.log
